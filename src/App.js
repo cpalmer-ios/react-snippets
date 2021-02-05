@@ -1,7 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import { useForm } from './useForm';s
 
-function App() {
+const App = () => {
+const [values, handleChange] = useForm({ email: "", password: ""});
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +21,8 @@ function App() {
           Learn React
         </a>
       </header>
+        <input name="email" value={values.email} onChange={handleChange} />
+        <input name="password" type="password" value={values.password} onChange={handleChange} />
     </div>
   );
 }
